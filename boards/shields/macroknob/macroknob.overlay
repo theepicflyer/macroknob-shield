@@ -1,0 +1,56 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+#include "macroknob-layouts.dtsi"
+
+/ {
+    chosen {
+        zmk,physical-layout = &physical_layout0;
+    };
+    
+    default_transform: keymap_transform0 {
+        compatible = "zmk,matrix-transform";
+        columns = <3>; 
+        rows = <1>;
+        map = <
+        //      | Knob |
+        //  | Left | Right |
+            RC(0,2)
+            RC(0,0) RC(0,1) 
+        >;
+    };
+
+    kscan0: kscan0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
+
+        col-gpios
+            = <&pro_micro 10 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 9 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 6 GPIO_ACTIVE_HIGH>
+            ;
+
+        row-gpios
+            = <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+
+    knob_encoder: encoder_knob {
+        compatible = "alps,ec11";
+        a-gpios = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <40>;
+        status = "okay";
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        status = "okay";
+        sensors = <&knob_encoder>;
+        triggers-per-rotation = <20>;
+    };
+};
+
+&physical_layout0 {
+        kscan = <&kscan0>;
+        transform = <&default_transform>;
+    };

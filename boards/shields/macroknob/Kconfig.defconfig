@@ -1,0 +1,9 @@
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_MACROKNOB
+
+config ZMK_KEYBOARD_NAME
+    default "MacroKnob"
+
+endif # SHIELD_MACROKNOB
