@@ -18,8 +18,8 @@ if [ -d "build/macroknob_dongle" ] && [ -d "build/macroknob_lily58_left" ] && [ 
 else
     echo "No previous builds found, pristine building."
     west build -p -d build/macroknob_dongle -b nice_nano_v2 -S studio-rpc-usb-uart -S zmk-usb-logging -- -DSHIELD=macroknob_dongle -DZMK_EXTRA_MODULES=$work_dir -DCONFIG_ZMK_STUDIO=y
-    west build -p -d build/macroknob_lily58_left -b nice_nano_v2 -- -DSHIELD=macroknob_lily58_left -DZMK_EXTRA_MODULES=$work_dir -DCONFIG_ZMK_STUDIO=y
-    west build -p -d build/macroknob_lily58_right -b nice_nano_v2 -- -DSHIELD=macroknob_lily58_right -DZMK_EXTRA_MODULES=$work_dir -DCONFIG_ZMK_STUDIO=y
+    west build -p -d build/macroknob_lily58_left -b nice_nano_v2 -- -DSHIELD=macroknob_lily58_left -DZMK_EXTRA_MODULES=$work_dir
+    west build -p -d build/macroknob_lily58_right -b nice_nano_v2 -- -DSHIELD=macroknob_lily58_right -DZMK_EXTRA_MODULES=$work_dir
     west build -p -d build/settings_reset -b nice_nano_v2 -- -DSHIELD=settings_reset -DZMK_EXTRA_MODULES=$work_dir
 fi
 
