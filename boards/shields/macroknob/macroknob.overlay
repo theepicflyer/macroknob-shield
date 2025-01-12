@@ -36,9 +36,9 @@
 
     knob_encoder: encoder_knob {
         compatible = "alps,ec11";
-        a-gpios = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <40>;
+        a-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
         status = "okay";
     };
 
@@ -49,8 +49,3 @@
         triggers-per-rotation = <20>;
     };
 };
-
-&physical_layout0 {
-        kscan = <&kscan0>;
-        transform = <&default_transform>;
-    };

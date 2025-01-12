@@ -15,7 +15,7 @@ if [ -d "build/macroknob" ] && [ -d "build/settings_reset" ]; then
     west build -d build/settings_reset
 else
     echo "No previous builds found, pristine building."
-    west build -p -d build/macroknob -b nice_nano_v2 -- -DSHIELD=macroknob -DZMK_EXTRA_MODULES=$work_dir
+    west build -p -d build/macroknob -b nice_nano_v2 -S studio-rpc-usb-uart -- -DSHIELD=macroknob -DZMK_EXTRA_MODULES=$work_dir -DCONFIG_ZMK_STUDIO=y
     west build -p -d build/settings_reset -b nice_nano_v2 -- -DSHIELD=settings_reset -DZMK_EXTRA_MODULES=$work_dir
 
 fi
