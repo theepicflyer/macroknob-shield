@@ -13,7 +13,7 @@ config ZMK_SPLIT
     default y
 
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-    default 1
+    default 2
 
 config BT_MAX_CONN
     default 7
