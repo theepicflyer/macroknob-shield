@@ -26,14 +26,16 @@
 //                     |  GUI |LOWER | ALT  |  SPACE |  | ENTER | BSPC | RAISE |  GUI  |
 			bindings = <
 
-&studio_unlock
-&kp Z  &kp M
 
 &kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp MINUS
 &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp EQUAL
 &kp LSHFT &kp A  &kp S  &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
 &kp LCTRL &kp Z  &kp X  &kp C    &kp V    &kp B  &kp LBKT   &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
                         &kp LGUI &mo 1   &kp LALT &kp SPACE  &kp RET  &kp BSPC  &mo 2  &kp RGUI
+			
+			
+&studio_unlock
+&kp Z  &kp M
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -53,14 +55,15 @@
 //                     |      |      |      |        |  |  DEL  |      |       |       |
 			bindings = <
 
-&trans
-&trans  &trans
 
 &kp F1     &kp F2           &kp F3            &kp F4            &kp F5       &kp F6                       &kp F7    &kp F8    &kp F9       &kp F10   &kp F11   &kp F12
 &trans     &trans           &trans            &trans            &trans       &trans                       &trans    &trans    &kp UP       &trans    &trans    &kp TILDE
 &kp CAPS    &trans           &trans            &trans            &trans       &trans                       &trans    &kp LEFT  &kp DOWN     &kp RIGHT &trans    &kp GRAVE
 &trans     &trans           &trans            &trans            &trans       &trans    &trans   &trans    &trans    &trans    &trans       &trans    &kp BSLH  &kp PIPE
                                               &trans            &trans       &trans    &trans   &trans    &kp DEL   &trans    &trans
+
+&trans
+&trans  &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -80,14 +83,15 @@
 //                     |      |      |      |        |  |       |      |       |       |
 			bindings = <
 
-&trans
-&trans  &trans
 
 &bt BT_CLR &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4   &trans      &trans    &trans    &trans   &trans    &trans
 &trans     &trans  &trans &trans  &trans  &trans                       &trans      &trans      &kp PG_UP    &trans   &trans    &trans
 &trans     &trans  &trans &trans  &trans  &trans                       &trans      &kp HOME    &kp PG_DN    &kp END   &trans    &trans
 &trans     &ext_power EP_ON  &ext_power EP_OFF &trans  &trans  &trans   &trans   &trans    &trans      &trans    &trans    &trans   &trans    &trans
                           &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans
+			
+&trans
+&trans  &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN>;

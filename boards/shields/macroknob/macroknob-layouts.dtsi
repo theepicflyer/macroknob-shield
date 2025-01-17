@@ -8,10 +8,7 @@
         transform = <&default_transform>;
 
         keys  //                     w   h    x    y     rot    rx    ry
-            = <&key_physical_attrs 100 100  775    0       0     0     0>
-            , <&key_physical_attrs 100 100  725  150       0     0     0>
-            , <&key_physical_attrs 100 100  825  150       0     0     0>
-            , <&key_physical_attrs 100 100    0  350       0     0     0>
+            = <&key_physical_attrs 100 100    0  350       0     0     0>
             , <&key_physical_attrs 100 100  100  337       0     0     0>
             , <&key_physical_attrs 100 100  200  312       0     0     0>
             , <&key_physical_attrs 100 100  300  300       0     0     0>
@@ -69,6 +66,9 @@
             , <&key_physical_attrs 100 100 1100  725       0     0     0>
             , <&key_physical_attrs 100 100 1200  715       0     0     0>
             , <&key_physical_attrs 100 100 1300  715       0     0     0>
+            , <&key_physical_attrs 100 100  775    0       0     0     0>
+            , <&key_physical_attrs 100 100  725  150       0     0     0>
+            , <&key_physical_attrs 100 100  825  150       0     0     0>
             ;
     };
 };
