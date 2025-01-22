@@ -1,21 +1,9 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "macroknob-layouts.dtsi"
+#include "macroknob.dtsi"
 
 / {
     chosen {
-        zmk,physical-layout = &physical_layout0;
-    };
-    
-    default_transform: keymap_transform0 {
-        compatible = "zmk,matrix-transform";
-        columns = <3>; 
-        rows = <1>;
-        map = <
-        //      | Knob |
-        //  | Left | Right |
-            RC(0,2)
-            RC(0,0) RC(0,1) 
-        >;
+        zmk,kscan = &kscan0;
     };
 
     kscan0: kscan0 {
@@ -34,18 +22,8 @@
             ;
     };
 
-    knob_encoder: encoder_knob {
-        compatible = "alps,ec11";
-        a-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <80>;
-        status = "okay";
-    };
+};
 
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        status = "okay";
-        sensors = <&knob_encoder>;
-        triggers-per-rotation = <20>;
-    };
+&default_transform {
+    row-offset = <5>;   // Adjust this to the rows value from macroknob.dtsi - 1
 };
