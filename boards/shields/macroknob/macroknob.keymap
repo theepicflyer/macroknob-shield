@@ -4,13 +4,15 @@
  * SPDX-License-Identifier: MIT
  */
 
+//** Add any includes that are in your existing keyboard's keymap here that are missing
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/outputs.h>
 
-// |     Knob     |
-// | Left | Right |
+                // |     Knob     |
+                // | Left | Right |
 
 / {
     keymap {
@@ -19,41 +21,62 @@
         default_layer {
            bindings = <
 
-// Insert your existing keyboard's keymap here
+                //** Insert your existing keyboard's keymap here
 
 
-// Below is the MacroKnob's
-// On all layers, make sure the Macroknob's 3 keys are behind your existing's rows
-&kp C_PLAY_PAUSE
-&kp Z  &kp M
 
+
+
+
+
+                // Below is the MacroKnob's
+                // On all layers, make sure the Macroknob's 3 keys are behind your existing's rows
+                &kp C_PLAY_PAUSE
+                &kp C_PREV  &kp C_NEXT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         lower_layer {
-// |     K     |
-// |  Z  |  M  |
             bindings = <
-// Insert your existing keyboard's keymap here
 
-&studio_unlock
-&trans  &trans
+                //** Insert your existing keyboard's keymap here
+                
+
+
+
+
+
+                // Below is the MacroKnob's
+                // On all layers, make sure the Macroknob's 3 keys are behind your existing's rows
+                &studio_unlock
+                &out OUT_USB  &out OUT_BLE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         raise_layer {
             bindings = <
-// Insert your existing keyboard's keymap here
 
-&trans
-&trans  &trans
+                //** Insert your existing keyboard's keymap here
+
+
+
+
+
+
+
+                // Below is the MacroKnob's
+                // On all layers, make sure the Macroknob's 3 keys are behind your existing's rows
+                &trans
+                &trans  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
+
+        //** Add any additional layers accordingly
     };
 };

@@ -25,5 +25,5 @@
 };
 
 &default_transform {
-    row-offset = <5>;   // Adjust this to the rows value from macroknob.dtsi - 1
+    row-offset = <5>;   //** Adjust this to the rows value from macroknob.dtsi - 1
 };
