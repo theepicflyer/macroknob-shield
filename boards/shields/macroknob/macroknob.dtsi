@@ -19,8 +19,8 @@
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
-        columns = <14>;     // **Change this to match your existing keyboard
-        rows = <6>;         // **Your existing keyboard's value + 1
+        columns = <3>;     // **Change this to the same value as your existing keyboard's columns (min 3)
+        rows = <1>;         // **Your existing keyboard's value + 1
 
         map = <
 
@@ -34,8 +34,8 @@
         // Below is the MacroKnob's
         // **Change the first value for all 3 entries below 
         // E.g. The '5' here to rows (above) - 1
-        RC(5,2)
-        RC(5,0) RC(5,1) 
+        RC(0,2)
+        RC(0,0) RC(0,1) 
         >;
     };
 

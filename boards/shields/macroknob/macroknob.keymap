@@ -35,7 +35,7 @@
                 &kp C_PREV  &kp C_NEXT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         lower_layer {
@@ -54,7 +54,7 @@
                 &out OUT_USB  &out OUT_BLE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         raise_layer {
@@ -74,7 +74,7 @@
                 &trans  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN    &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         //** Add any additional layers accordingly
