@@ -1,0 +1,65 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+#include "macroknob-layouts.dtsi"
+
+        // |      Encoder     |
+        // |  Left  |  Right  |
+
+/ {
+
+    chosen {
+        //** Copy lines for any peripherals, e.g. OLED
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <3>;     // **Change this to the same value as your existing keyboard's columns (min 3)
+        rows = <1>;         // **Your existing keyboard's value + 1
+
+        map = <
+
+        // **Insert your existing keyboard's map here
+
+
+
+
+
+
+        // Below is the MacroKnob's
+        // **Change the first value for all 3 entries below 
+        // E.g. The '5' here to rows (above) - 1
+        RC(0,2)
+        RC(0,0) RC(0,1) 
+        >;
+    };
+
+    //** If your existing keyboard has encoders, copy them below.
+
+
+
+
+    // Below is the encoder on the MacroKnob
+    macroknob_encoder: macroknob_encoder {
+        compatible = "alps,ec11";
+        a-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+        status = "okay";        // Enabled by default
+    };
+
+    
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&macroknob_encoder>; //** Add your existing's encoders if any
+        triggers-per-rotation = <20>;
+    };
+};
+
+//** Any additional options from your existing keyboard's overlay.
+// E.g. OLED screen, LED strips
