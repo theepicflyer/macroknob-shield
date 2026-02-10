@@ -28,8 +28,8 @@
 // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   =   |
 // | SHIFT |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // |  CTRL |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                     |  GUI |LOWER | ALT  |  SPACE |  | ENTER | BSPC | RAISE |  GUI  |
-
+//                     |LOWER | LALT | LGUI |  SPACE |  | ENTER | BSPC | RAISE |  GUI  |
+			bindings = <
 &kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp MINUS
 &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp EQUAL
 &kp LSHFT &kp A  &kp S  &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
@@ -54,14 +54,15 @@
 
 // Lily58 -----------------------------------------------------------------------------------------------------
 // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-// |       |     |     |      |      |      |                   |      |       |  UP   |      |       |   ~   |
-// |  CAPS |     |     |      |      |      |                   |      | LEFT  | DOWN  | RIGHT|       |   `   |
+// |       |     |     |      |      |      |                   |      |       |       |      |       |   ~   |
+// |  CAPS |     |     |      |      |      |                   | LEFT | DOWN  |   UP  | RIGHT|       |   `   |
 // |       |     |     |      |      |      |        |  |       |      |       |       |      |   \   |   |   |
 //                     |      |      |      |        |  |  DEL  |      |       |       |
+			bindings = <
 
 &kp F1     &kp F2           &kp F3            &kp F4            &kp F5       &kp F6                       &kp F7    &kp F8    &kp F9       &kp F10   &kp F11   &kp F12
-&trans     &trans           &trans            &trans            &trans       &trans                       &trans    &trans    &kp UP       &trans    &trans    &kp TILDE
-&kp CAPS    &trans           &trans            &trans            &trans       &trans                       &trans    &kp LEFT  &kp DOWN     &kp RIGHT &trans    &kp GRAVE
+&trans     &trans           &trans            &trans            &trans       &trans                       &trans    &trans    &trans       &trans    &trans    &kp TILDE
+&kp CAPS   &trans           &trans            &trans            &trans       &trans                       &kp LEFT  &kp DOWN  &kp UP       &kp RIGHT &trans    &kp GRAVE
 &trans     &trans           &trans            &trans            &trans       &trans    &trans   &trans    &trans    &trans    &trans       &trans    &kp BSLH  &kp PIPE
                                               &trans            &trans       &trans    &trans   &trans    &kp DEL   &trans    &trans
 
