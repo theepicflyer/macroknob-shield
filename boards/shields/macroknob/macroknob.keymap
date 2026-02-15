@@ -21,7 +21,7 @@
         default_layer {
            bindings = <
 
-                // Insert your existing keyboard's keymap here
+                // **Insert your existing keyboard's keymap here
 
 
 
@@ -32,7 +32,7 @@
                 // Below is the MacroKnob's
                 // On all layers, make sure the Macroknob's 3 keys are behind your existing's rows
                 &studio_unlock
-                &out OUT_USB  &kp C_NEXT
+                &kp C_PLAY_PAUSE  &kp C_NEXT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -41,7 +41,7 @@
         lower_layer {
             bindings = <
 
-                // Insert your existing keyboard's keymap here
+                // **Insert your existing keyboard's keymap here
                 
 
 
@@ -60,7 +60,7 @@
         raise_layer {
             bindings = <
 
-                // Insert your existing keyboard's keymap here
+                // **Insert your existing keyboard's keymap here
 
 
 
