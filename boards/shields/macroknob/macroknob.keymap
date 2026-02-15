@@ -32,7 +32,7 @@
                 // Below is the MacroKnob's
                 // On all layers, make sure the Macroknob's 3 keys are behind your existing's rows
                 &studio_unlock
-                &kp C_PREV  &kp C_NEXT
+                &out OUT_USB  &kp C_NEXT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
