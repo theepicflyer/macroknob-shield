@@ -4,7 +4,7 @@
 if SHIELD_MACROKNOB
 
 config ZMK_KEYBOARD_NAME
-    default "MacroKnob Aurora Sofle"
+    default "Macroknob Sofle"
 
 config ZMK_SPLIT
     default y
