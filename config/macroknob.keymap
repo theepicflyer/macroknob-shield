@@ -1,0 +1,77 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+//** Add any includes that are in your existing keyboard's keymap here that are missing
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/outputs.h>
+
+                // |     Knob     |
+                // | Left | Right |
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                // Aurora Sofle keymap
+&kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp MINUS
+&kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp EQUAL
+&kp LSHFT &kp A  &kp S  &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+&kp LCTRL &kp Z  &kp X  &kp C    &kp V    &kp B  &kp LBKT   &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+             &kp LBKT    &kp LGUI &mo 1   &kp LALT &kp SPACE  &kp RET  &kp BSPC  &mo 2  &kp RGUI &kp RBKT
+
+                // Below is the MacroKnob's
+                // On all layers, make sure the Macroknob's 3 keys are behind your existing's rows
+&studio_unlock
+&out OUT_USB  &out OUT_BLE
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        lower_layer {
+            bindings = <
+                // Aurora Sofle keymap
+&kp F1     &kp F2           &kp F3            &kp F4            &kp F5       &kp F6                       &kp F7    &kp F8    &kp F9       &kp F10   &kp F11   &kp F12
+&trans     &trans           &trans            &trans            &trans       &trans                       &trans    &trans    &kp UP       &trans    &trans    &kp TILDE
+&kp CAPS   &trans           &trans            &trans            &trans       &trans                       &trans    &kp LEFT  &kp DOWN     &kp RIGHT &trans    &kp GRAVE
+&trans     &trans           &trans            &trans            &trans       &trans    &trans   &trans    &trans    &trans    &trans       &trans    &kp BSLH  &kp PIPE
+                            &trans            &trans            &trans       &trans    &trans   &trans    &kp DEL   &trans    &trans       &trans
+
+                // Below is the MacroKnob's
+                // On all layers, make sure the Macroknob's 3 keys are behind your existing's rows
+&trans
+&trans  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        raise_layer {
+            bindings = <
+                // Aurora Sofle keymap
+&bt BT_CLR &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4   &trans      &trans    &trans    &trans   &trans    &trans
+&trans     &trans        &trans        &trans        &trans          &trans          &trans      &trans    &kp PG_UP &trans   &trans    &trans
+&trans     &trans        &trans        &trans        &trans          &trans          &trans      &kp HOME  &kp PG_DN &kp END  &trans    &trans
+&trans     &ext_power EP_ON &ext_power EP_OFF &trans  &trans  &trans   &trans   &trans    &trans      &trans    &trans    &trans   &trans    &trans
+                             &trans        &trans        &trans   &trans    &trans   &trans    &trans      &trans    &trans    &trans
+
+                // Below is the MacroKnob's
+                // On all layers, make sure the Macroknob's 3 keys are behind your existing's rows
+&trans
+&trans  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        // Add any additional layers accordingly
+    };
+};
