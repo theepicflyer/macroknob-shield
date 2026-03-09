@@ -35,21 +35,21 @@ RC(5,0) RC(5,1)
         >;
     };
 
-    // Aurora Sofle left encoder
+    // Aurora Sofle left encoder (on peripheral, not this dongle)
     left_encoder: left_encoder {
         compatible = "alps,ec11";
         steps = <144>;
-        status = "okay";
+        status = "disabled";
 
         a-gpios = <&pro_micro 16 GPIO_PULL_UP>;
         b-gpios = <&pro_micro 10 GPIO_PULL_UP>;
     };
 
-    // Aurora Sofle right encoder
+    // Aurora Sofle right encoder (on peripheral, not this dongle)
     right_encoder: right_encoder {
         compatible = "alps,ec11";
         steps = <144>;
-        status = "okay";
+        status = "disabled";
 
         a-gpios = <&pro_micro 16 GPIO_PULL_UP>;
         b-gpios = <&pro_micro 10 GPIO_PULL_UP>;
