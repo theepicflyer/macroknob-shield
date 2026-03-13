@@ -1,5 +1,9 @@
 #include <physical_layouts.dtsi>
 
+// ============================================================
+// STEP 3 of 5 — Physical key layout (used by ZMK Studio)
+// ============================================================
+
 / {
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
@@ -8,14 +12,17 @@
         transform = <&default_transform>;
 
         keys  //                     w   h    x    y     rot    rx    ry
-            //** Insert your keyboard's physical layout here: 
+            // STEP 3: Paste your keyboard's key_physical_attrs lines here.
+            // Each line except the last ends with a comma.
+            // The MacroKnob lines below already start with ',' so your
+            // last keyboard line does NOT need a trailing comma.
+            //
+            // If your keyboard has no physical layout defined, you can
+            // generate one from its info.json using the ZMK physical
+            // layout generator, or leave this section empty and skip Studio.
 
-
-
-
-            // Below are the key attributes for the MacroKnob
-            //** Make sure to change the '=' for the knob key line below to ',' when you put your existing lines above.
-            // Some adjustment of x and y values might be necessary to not clash with your existing keyboard in Studio
+            // Below are the key attributes for the MacroKnob.
+            // Adjust x/y if they overlap with your keyboard in Studio.
             //                       w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100  775    0       0     0     0>   // Knob key
             , <&key_physical_attrs 100 100  725  150       0     0     0>   // Left
