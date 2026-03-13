@@ -1,8 +1,14 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
+# ============================================================
+# STEP 1 of 5 — Keyboard identity + connection count
+# ============================================================
+
 if SHIELD_MACROKNOB
 
+# STEP 1a: Change "MacroKnob" to a name that identifies your
+# keyboard + dongle combo. This is the Bluetooth device name.
 config ZMK_KEYBOARD_NAME
     default "MacroKnob"
 
@@ -12,16 +18,19 @@ config ZMK_SPLIT
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-# Set this to the number of peripherals your dongle will have.
-# For a unibody, this would be 1. If you have left and right halves, set it to 2, etc.
+# STEP 1b: Set this to the number of wireless peripherals
+# that connect to this dongle.
+# - Unibody keyboard: 1
+# - Split keyboard (left + right halves): 2
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
     default 2
 
-# Set this to ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS + your desired number of BT profiles (default is 5)
+# STEP 1c: Set this to ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS + 5.
+# (5 is the default number of Bluetooth host profiles.)
 config BT_MAX_CONN
     default 7
 
-# Set this to the same number as BT_MAX_CONN
+# STEP 1d: Keep this equal to BT_MAX_CONN.
 config BT_MAX_PAIRED
     default 7
 
