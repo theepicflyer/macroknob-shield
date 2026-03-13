@@ -4,6 +4,10 @@
  * SPDX-License-Identifier: MIT
  */
 
+// ============================================================
+// STEP 2 of 5 — Matrix transform, encoders, peripherals
+// ============================================================
+
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "macroknob-layouts.dtsi"
 
@@ -13,38 +17,38 @@
 / {
 
     chosen {
-        //** Copy lines for any peripherals, e.g. OLED
+        // STEP 2a: If your keyboard has peripherals (e.g. OLED),
+        // copy the relevant chosen lines from its .dtsi here.
+        // Example for OLED: zephyr,display = &oled;
         zmk,physical-layout = &physical_layout0;
     };
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
-        columns = <3>;     // **Change this to the same value as your existing keyboard's columns (min 3)
-        rows = <1>;         // **Your existing keyboard's value + 1
+        // STEP 2b: Set columns and rows to match your keyboard's
+        // matrix dimensions. rows must be your keyboard's row
+        // count + 1 (the extra row is for the MacroKnob itself).
+        columns = <3>;     // your keyboard's column count (min 3)
+        rows = <1>;        // your keyboard's row count + 1
 
         map = <
-
-        // **Insert your existing keyboard's map here
-
-
-
-
-
+        // STEP 2c: Paste your keyboard's RC map here, above the
+        // MacroKnob entries. The row index in the MacroKnob
+        // entries below must equal (rows - 1). With rows = 1
+        // they stay at RC(0,x); with rows = 6 change to RC(5,x).
 
         // Below is the MacroKnob's
-        // **Change the first value for all 3 entries below 
-        // E.g. The '5' here to rows (above) - 1
         RC(0,2)
-        RC(0,0) RC(0,1) 
+        RC(0,0) RC(0,1)
         >;
     };
 
-    //** If your existing keyboard has encoders, copy them below.
+    // STEP 2d: If your keyboard has encoders, define their nodes
+    // here, following the same pattern as macroknob_encoder below.
+    // Set status = "disabled" for encoders that are on peripheral
+    // halves (they register via the split protocol, not directly).
 
-
-
-
-    // Below is the encoder on the MacroKnob
+    // Below is the encoder on the MacroKnob itself
     macroknob_encoder: macroknob_encoder {
         compatible = "alps,ec11";
         a-gpios = <&pro_micro 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
@@ -53,13 +57,19 @@
         status = "okay";        // Enabled by default
     };
 
-    
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
-        sensors = <&macroknob_encoder>; //** Add your existing's encoders if any
+        // STEP 2e: Add any keyboard encoders before &macroknob_encoder.
+        // The order here must match the sensor-bindings order in the keymap.
+        sensors = <&macroknob_encoder>;
         triggers-per-rotation = <20>;
     };
 };
 
-//** Any additional options from your existing keyboard's overlay.
-// E.g. OLED screen, LED strips
+// STEP 2f: Copy any additional overlay options from your keyboard
+// here (e.g. OLED node, LED strip node).
+// Example:
+// &pro_micro_i2c {
+//     status = "okay";
+//     oled: ssd1306@3c { ... };
+// };
