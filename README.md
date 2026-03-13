@@ -1,41 +1,65 @@
-# macroknob-shield
-A simple 2-key, 1 rotary encoder shield for ZMK. Designed to complement any ZMK keyboard as a dongle.
+# MacroKnob Shield
 
-This repo contains the firmware required to use the Macroknob. The PCB and case files can be found here: https://github.com/theepicflyer/macroknob
+A ZMK dongle shield for the [MacroKnob](https://github.com/theepicflyer/macroknob).
+Lets a Nice!Nano act as a USB/wireless receiver for an existing ZMK keyboard.
 
-# Standalone vs Dongle
-The Macroknob can be used two ways.
+## Standalone vs. dongle
 
-1. To use it standalone, as just a macropad, the firmware in this repo can be built and used as-is.
-2. To use it as a dongle for another ZMK keyboard, follow the guide below and the instructions in each file to integrate the configuration from your existing keyboard into this.
+The MacroKnob can be used two ways:
 
-# Dongle mode
-As a high level overview, you will modify slightly our existing keyboard's firmware, then build it as per usual in your existing repo. You will then build the Macroknob's firmware using this repo as a template. The Macroknob's firmware needs to be configured specifically for your keyboard before building, and you can follow the instructions in this repo.
+1. **Standalone** — as just a macropad. The firmware in this repo builds and works as-is.
+2. **Dongle** — as a wireless receiver for another ZMK keyboard. Follow the guide below to integrate your keyboard's config into this repo.
 
-## In this repo
-Look at every file in [this directory](boards/shields/macroknob) and follow the instructions in each file. Keep your existing keyboard's repo open to copy some of the config over.
+## Getting started (dongle mode)
 
-## In your existing keyboard repo
-Add the `-DCONFIG_ZMK_SPLIT_ROLE_CENTRAL` cmake-arg to your existing keyboard's build options:
+### In this repo
 
+1. Fork or clone this repo.
+2. Follow the `// STEP N:` comments in the files under `boards/shields/macroknob/`
+   in order (Steps 1–5).
+3. Push to GitHub — Actions will build your MacroKnob firmware automatically.
+
+### In your existing keyboard repo
+
+Add `-DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n` to each peripheral's cmake-args in your keyboard's `build.yaml`. This tells ZMK that those halves are no longer the central — the MacroKnob dongle is.
+
+**Split keyboard (left + right halves):**
 ```yaml
-# build.yml
+# build.yaml
   - board: nice_nano_v2
-    shield: my_existing_keyboard_left
+    shield: my_keyboard_left
     cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
   - board: nice_nano_v2
-    shield: my_existing_keyboard_right
+    shield: my_keyboard_right
     cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 ```
 
-If your existing keyboard is a unibody (i.e. not split), it will be treated as a split with the dongle. Hence you will also need to add that arg:
+**Unibody keyboard:**
 ```yaml
-include:
+# build.yaml
   - board: nice_nano_v2
-    shield: my_existing_keyboard
+    shield: my_keyboard
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 ```
 
+See the [`splitkb_aurora_sofle`](../../tree/splitkb_aurora_sofle) branch for a
+fully worked example using the Aurora Sofle keyboard.
 
-The 'splitkb_aurora_lily58' branch is an example for the SplitKB Lily58, and can be referenced if you get stuck. It is the configuration I use for my own daily driver.
+## AI-assisted setup
+
+If you're using Claude Code or another AI agent, open this repo and ask it to
+help you set up the MacroKnob for your keyboard. The `CLAUDE.md` file gives the
+agent the context it needs to guide you through the steps.
+
+## Files
+
+| File | Purpose |
+|------|---------|
+| `Kconfig.defconfig` | Keyboard name, BLE peripheral count |
+| `macroknob.dtsi` | Matrix transform, encoders, OLED/peripherals |
+| `macroknob-layouts.dtsi` | Physical layout for ZMK Studio |
+| `macroknob.keymap` | Key bindings per layer |
+| `macroknob.overlay` | Row offset for the matrix transform |
+| `macroknob.conf` | Encoder Kconfig flags |
+| `build.yaml` | GitHub Actions build matrix |
