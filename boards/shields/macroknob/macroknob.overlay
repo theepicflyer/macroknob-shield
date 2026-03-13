@@ -18,6 +18,10 @@
 
 };
 
+// ============================================================
+// STEP 5 applied — Aurora Sofle example
+// ============================================================
 &default_transform {
-    row-offset = <0>;   //** Adjust this to the rows value from macroknob.dtsi - 1
+    // (STEP 5 applied — Aurora Sofle has 5 keyboard rows, so row-offset = 5)
+    row-offset = <5>;   // Aurora Sofle rows (6) - 1
 };

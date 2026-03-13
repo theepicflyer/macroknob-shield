@@ -1,10 +1,15 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
+# ============================================================
+# STEP 1 applied — Aurora Sofle example
+# ============================================================
+
 if SHIELD_MACROKNOB
 
+# (STEP 1a applied — "Macroknob Sofle": left + right Sofle halves dongle)
 config ZMK_KEYBOARD_NAME
-    default "MacroKnob"
+    default "Macroknob Sofle"
 
 config ZMK_SPLIT
     default y
@@ -12,16 +17,15 @@ config ZMK_SPLIT
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-# Set this to the number of peripherals your dongle will have.
-# For a unibody, this would be 1. If you have left and right halves, set it to 2, etc.
+# (STEP 1b applied — 2 peripherals: left + right Aurora Sofle halves)
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
     default 2
 
-# Set this to ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS + your desired number of BT profiles (default is 5)
+# (STEP 1c applied — 2 peripherals + 5 host profiles = 7)
 config BT_MAX_CONN
     default 7
 
-# Set this to the same number as BT_MAX_CONN
+# (STEP 1d applied — equal to BT_MAX_CONN)
 config BT_MAX_PAIRED
     default 7
 
