@@ -1,5 +1,9 @@
 #include <physical_layouts.dtsi>
 
+// ============================================================
+// STEP 3 applied — Aurora Sofle example
+// ============================================================
+
 / {
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
@@ -7,6 +11,7 @@
 
         transform = <&default_transform>;
 
+        // (STEP 3 applied — Aurora Sofle physical layout; MacroKnob positioned to the right)
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0   37       0     0     0>
             , <&key_physical_attrs 100 100  100   37       0     0     0>

@@ -18,6 +18,10 @@
 
 };
 
+// ============================================================
+// STEP 5 applied — Aurora Sofle example
+// ============================================================
 &default_transform {
+    // (STEP 5 applied — Aurora Sofle has 5 keyboard rows, so row-offset = 5)
     row-offset = <5>;   // Aurora Sofle rows (6) - 1
 };

@@ -14,11 +14,16 @@
                 // |     Knob     |
                 // | Left | Right |
 
+// ============================================================
+// STEP 4 applied — Aurora Sofle example
+// ============================================================
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
+            // (STEP 4b applied — Aurora Sofle default layer)
             bindings = <
                 // Aurora Sofle keymap
 &kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp MINUS
@@ -33,10 +38,11 @@
 &out OUT_USB  &kp LGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN>; // (STEP 4c applied — 3 encoders: left, right, macroknob)
         };
 
         lower_layer {
+            // (STEP 4d applied — Aurora Sofle lower layer)
             bindings = <
                 // Aurora Sofle keymap
 &kp F1     &kp F2           &kp F3            &kp F4            &kp F5       &kp F6                       &kp F7    &kp F8    &kp F9       &kp F10   &kp F11   &kp F12
@@ -51,10 +57,11 @@
 &trans  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN>; // (STEP 4c applied — 3 encoders: left, right, macroknob)
         };
 
         raise_layer {
+            // (STEP 4e applied — Aurora Sofle raise layer)
             bindings = <
                 // Aurora Sofle keymap
 &bt BT_CLR &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4   &trans      &trans    &trans    &trans   &trans    &trans
@@ -69,7 +76,7 @@
 &trans  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN>; // (STEP 4c applied — 3 encoders: left, right, macroknob)
         };
 
         // Add any additional layers accordingly
