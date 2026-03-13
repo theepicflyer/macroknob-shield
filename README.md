@@ -1,6 +1,6 @@
 # MacroKnob Shield
 
-A ZMK dongle shield for the [MacroKnob](https://github.com/davidphilipbarr/macroknob).
+A ZMK dongle shield for the [MacroKnob](https://github.com/theepicflyer/macroknob).
 Lets a Nice!Nano act as a USB/wireless receiver for an existing ZMK keyboard.
 
 ## Standalone vs. dongle
