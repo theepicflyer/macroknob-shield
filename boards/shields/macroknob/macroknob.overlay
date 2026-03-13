@@ -18,6 +18,13 @@
 
 };
 
+// ============================================================
+// STEP 5 of 5 — Row offset
+// ============================================================
+
 &default_transform {
-    row-offset = <0>;   //** Adjust this to the rows value from macroknob.dtsi - 1
+    // STEP 5: Set this to (rows - 1) from macroknob.dtsi.
+    // E.g. if rows = 6, set row-offset = <5>.
+    // If rows = 1 (MacroKnob only), leave as <0>.
+    row-offset = <0>;
 };
